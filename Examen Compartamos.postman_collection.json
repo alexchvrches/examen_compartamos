@@ -1,0 +1,1127 @@
+{
+	"info": {
+		"_postman_id": "581eb938-4592-419e-85ab-2fc2c21cbbe7",
+		"name": "Examen Compartamos",
+		"description": "API de ejemplo que enlista los requests solicitados en el examen de Compartamos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar nuevo dispositivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"TH06\",\r\n    \"tipo_dispositivo\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/createDevice",
+					"protocol": "https",
+					"host": [
+						"ul9bncvbk5",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"createDevice"
+					]
+				},
+				"description": "Registrar un nuevo dispositivo en la BD."
+			},
+			"response": [
+				{
+					"name": "Dispositivo  registrado correctamente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"TH05\",\r\n    \"tipo_dispositivo\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/createDevice",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"createDevice"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 21:42:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se registró correctamente el dispositivo\",\n    \"response\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener listado de dispositivos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevices",
+					"protocol": "https",
+					"host": [
+						"ul9bncvbk5",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"getDevices"
+					]
+				},
+				"description": "Enlistar los dispositivos registrados en la BD, si se le manda diferentes parametros por URL, es posible filtrar los resultados."
+			},
+			"response": [
+				{
+					"name": "Obtener todos los dispositivos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevices",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getDevices"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3821"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:35:05 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"devices\": [\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:24\",\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 6,\n            \"nombre\": \"AG01\",\n            \"potencial_actual\": 138,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 7,\n            \"nombre\": \"AG02\",\n            \"potencial_actual\": 120,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 8,\n            \"nombre\": \"AG03\",\n            \"potencial_actual\": 150,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 9,\n            \"nombre\": \"AG04\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 10,\n            \"nombre\": \"AG05\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 10:48\",\n            \"fecha_registro\": \"2022-03-08 15:39\",\n            \"id\": 1,\n            \"nombre\": \"CF01\",\n            \"potencial_actual\": 130,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": true,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 15:40\",\n            \"id\": 2,\n            \"nombre\": \"CF02\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En mantenimiento\",\n            \"status_id\": 2,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:24\",\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 3,\n            \"nombre\": \"CF03\",\n            \"potencial_actual\": 130,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 4,\n            \"nombre\": \"CF04\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 5,\n            \"nombre\": \"CF05\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 11,\n            \"nombre\": \"TH01\",\n            \"potencial_actual\": 150,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 12,\n            \"nombre\": \"TH02\",\n            \"potencial_actual\": 112,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 13,\n            \"nombre\": \"TH03\",\n            \"potencial_actual\": 190,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:26\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 14,\n            \"nombre\": \"TH04\",\n            \"potencial_actual\": 180,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 15,\n            \"nombre\": \"TH05\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 11:33\",\n            \"id\": 16,\n            \"nombre\": \"TH06\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        }\n    ],\n    \"message\": \"Se obtuvieron todos los dispositivos\",\n    \"response\": true\n}"
+				},
+				{
+					"name": "Obtener todos los Aerogeneradores",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevices?idtype=1",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getDevices"
+							],
+							"query": [
+								{
+									"key": "idtype",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1229"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:36:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"devices\": [\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:24\",\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 6,\n            \"nombre\": \"AG01\",\n            \"potencial_actual\": 138,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 7,\n            \"nombre\": \"AG02\",\n            \"potencial_actual\": 120,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 8,\n            \"nombre\": \"AG03\",\n            \"potencial_actual\": 150,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 9,\n            \"nombre\": \"AG04\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 10,\n            \"nombre\": \"AG05\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        }\n    ],\n    \"message\": \"Se obtuvieron los dispositivos del tipo 1\",\n    \"response\": true\n}"
+				},
+				{
+					"name": "Obtener todas las Celdas dotovoltaicas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevices?idtype=2",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getDevices"
+							],
+							"query": [
+								{
+									"key": "idtype",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1243"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:36:46 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"devices\": [\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 10:48\",\n            \"fecha_registro\": \"2022-03-08 15:39\",\n            \"id\": 1,\n            \"nombre\": \"CF01\",\n            \"potencial_actual\": 130,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": true,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 15:40\",\n            \"id\": 2,\n            \"nombre\": \"CF02\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En mantenimiento\",\n            \"status_id\": 2,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:24\",\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 3,\n            \"nombre\": \"CF03\",\n            \"potencial_actual\": 130,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 4,\n            \"nombre\": \"CF04\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:41\",\n            \"id\": 5,\n            \"nombre\": \"CF05\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        }\n    ],\n    \"message\": \"Se obtuvieron los dispositivos del tipo 2\",\n    \"response\": true\n}"
+				},
+				{
+					"name": "Obtener todas las Turbinas hidroelectricas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevices?idtype=3",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getDevices"
+							],
+							"query": [
+								{
+									"key": "idtype",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1522"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:37:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"devices\": [\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 11,\n            \"nombre\": \"TH01\",\n            \"potencial_actual\": 150,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 12,\n            \"nombre\": \"TH02\",\n            \"potencial_actual\": 112,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:25\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 13,\n            \"nombre\": \"TH03\",\n            \"potencial_actual\": 190,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": \"2022-03-08 11:26\",\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 14,\n            \"nombre\": \"TH04\",\n            \"potencial_actual\": 180,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 09:42\",\n            \"id\": 15,\n            \"nombre\": \"TH05\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"en_conflicto\": false,\n            \"fecha_actualizacion\": null,\n            \"fecha_registro\": \"2022-03-08 11:33\",\n            \"id\": 16,\n            \"nombre\": \"TH06\",\n            \"potencial_actual\": null,\n            \"status_ nombre\": \"En operacion\",\n            \"status_id\": 1,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        }\n    ],\n    \"message\": \"Se obtuvieron los dispositivos del tipo 3\",\n    \"response\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener dispositivo por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevice/17",
+					"protocol": "https",
+					"host": [
+						"ul9bncvbk5",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"getDevice",
+						"17"
+					]
+				},
+				"description": "Se obtiene la informacion de un unico dispositivo a traves del ID"
+			},
+			"response": [
+				{
+					"name": "Obtener dispositivo correctamente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevice/1",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getDevice",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "319"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Mar 2022 00:00:38 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"device\": {\n        \"en_conflicto\": false,\n        \"fecha_actualizacion\": \"2022-03-08 10:48\",\n        \"fecha_registro\": \"2022-03-08 15:39\",\n        \"id\": 1,\n        \"nombre\": \"CF01\",\n        \"potencial_actual\": 130,\n        \"status_ nombre\": \"En operacion\",\n        \"status_id\": 1,\n        \"tipo_id\": 2,\n        \"tipo_nombre\": \"Celda fotovoltaica\"\n    },\n    \"message\": \"Se obtuvo la informacion del dispositivo\",\n    \"response\": true\n}"
+				},
+				{
+					"name": "Dispositivo no existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getDevice/17",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getDevice",
+								"17"
+							]
+						}
+					},
+					"status": "ACCEPTED",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 09 Mar 2022 00:01:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"device\": {},\n    \"message\": \"No se encontro el dispositivo especificado\",\n    \"response\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Registrar nueva lectura de dispositivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"iddispositivo\": 14,\r\n    \"potencia\": 180\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/createReading",
+					"protocol": "https",
+					"host": [
+						"ul9bncvbk5",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"createReading"
+					]
+				},
+				"description": "Se registra una nueva lectura en la BD."
+			},
+			"response": [
+				{
+					"name": "Lectura registrada correctamente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iddispositivo\": 1,\r\n    \"potencia\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/createReading",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"createReading"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 22:38:52 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se registro correctamente la lectura\",\n    \"response\": true\n}"
+				},
+				{
+					"name": "Dispositivo no existente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iddispositivo\": 16,\r\n    \"potencia\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/createReading",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"createReading"
+							]
+						}
+					},
+					"status": "ACCEPTED",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 22:39:42 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El dispositivo proporcionado no existe\",\n    \"response\": false\n}"
+				},
+				{
+					"name": "El dispositivo esta en mantenimiento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iddispositivo\": 2,\r\n    \"potencia\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/createReading",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"createReading"
+							]
+						}
+					},
+					"status": "ACCEPTED",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 22:40:40 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El dispositivo proporcionado esta en mantenimiento\",\n    \"response\": false\n}"
+				},
+				{
+					"name": "El dispositivo ha llegado al limite de intentos de lectura",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iddispositivo\": 2,\r\n    \"potencia\": 130\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/createReading",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"createReading"
+							]
+						}
+					},
+					"status": "ACCEPTED",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "115"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:03:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El dispositivo proporcionado esta en mantenimiento, se ha marcado como En conflicto\",\n    \"response\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener lecturas de dispositivos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getReadings",
+					"protocol": "https",
+					"host": [
+						"ul9bncvbk5",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"getReadings"
+					]
+				},
+				"description": "Se obtiene un un listado de las lecturas registradas en la BD, si se le mandan parametros diferentes, es posible filtrar los resultados."
+			},
+			"response": [
+				{
+					"name": "Obtener todas las lecturas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getReadings",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getReadings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1922"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:29:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se obtuvieron todas las lecturas\",\n    \"readings\": [\n        {\n            \"fecha_registro\": \"2022-03-08 11:26\",\n            \"id\": 14,\n            \"iddispositivo\": 14,\n            \"nombre_dispositivo\": \"TH04\",\n            \"potencia\": 180,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 9,\n            \"iddispositivo\": 7,\n            \"nombre_dispositivo\": \"AG02\",\n            \"potencia\": 120,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 10,\n            \"iddispositivo\": 8,\n            \"nombre_dispositivo\": \"AG03\",\n            \"potencia\": 150,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 11,\n            \"iddispositivo\": 11,\n            \"nombre_dispositivo\": \"TH01\",\n            \"potencia\": 150,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 12,\n            \"iddispositivo\": 12,\n            \"nombre_dispositivo\": \"TH02\",\n            \"potencia\": 112,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 13,\n            \"iddispositivo\": 13,\n            \"nombre_dispositivo\": \"TH03\",\n            \"potencia\": 190,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:24\",\n            \"id\": 7,\n            \"iddispositivo\": 3,\n            \"nombre_dispositivo\": \"CF03\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:24\",\n            \"id\": 8,\n            \"iddispositivo\": 6,\n            \"nombre_dispositivo\": \"AG01\",\n            \"potencia\": 138,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:48\",\n            \"id\": 6,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:47\",\n            \"id\": 4,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:45\",\n            \"id\": 2,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 123,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:38\",\n            \"id\": 1,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 123,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        }\n    ],\n    \"response\": true\n}"
+				},
+				{
+					"name": "Obtener lecturas de Aerogeneradores",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getReadings?idtype=1",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getReadings"
+							],
+							"query": [
+								{
+									"key": "idtype",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "553"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:30:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se obtuvieron las lecturas del tipo de dispositivo proporcionado\",\n    \"readings\": [\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 9,\n            \"iddispositivo\": 7,\n            \"nombre_dispositivo\": \"AG02\",\n            \"potencia\": 120,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 10,\n            \"iddispositivo\": 8,\n            \"nombre_dispositivo\": \"AG03\",\n            \"potencia\": 150,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:24\",\n            \"id\": 8,\n            \"iddispositivo\": 6,\n            \"nombre_dispositivo\": \"AG01\",\n            \"potencia\": 138,\n            \"tipo_id\": 1,\n            \"tipo_nombre\": \"Aerogenerador\"\n        }\n    ],\n    \"response\": true\n}"
+				},
+				{
+					"name": "Obtener lecturas de Celdas fotovoltaicas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getReadings?idtype=2",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getReadings"
+							],
+							"query": [
+								{
+									"key": "idtype",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "873"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:30:49 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se obtuvieron las lecturas del tipo de dispositivo proporcionado\",\n    \"readings\": [\n        {\n            \"fecha_registro\": \"2022-03-08 11:24\",\n            \"id\": 7,\n            \"iddispositivo\": 3,\n            \"nombre_dispositivo\": \"CF03\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:48\",\n            \"id\": 6,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:47\",\n            \"id\": 4,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:45\",\n            \"id\": 2,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 123,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:38\",\n            \"id\": 1,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 123,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        }\n    ],\n    \"response\": true\n}"
+				},
+				{
+					"name": "Obtener lecturas de Turbinas hidroelectricas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getReadings?idtype=3",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getReadings"
+							],
+							"query": [
+								{
+									"key": "idtype",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "744"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:31:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se obtuvieron las lecturas del tipo de dispositivo proporcionado\",\n    \"readings\": [\n        {\n            \"fecha_registro\": \"2022-03-08 11:26\",\n            \"id\": 14,\n            \"iddispositivo\": 14,\n            \"nombre_dispositivo\": \"TH04\",\n            \"potencia\": 180,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 11,\n            \"iddispositivo\": 11,\n            \"nombre_dispositivo\": \"TH01\",\n            \"potencia\": 150,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 12,\n            \"iddispositivo\": 12,\n            \"nombre_dispositivo\": \"TH02\",\n            \"potencia\": 112,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 11:25\",\n            \"id\": 13,\n            \"iddispositivo\": 13,\n            \"nombre_dispositivo\": \"TH03\",\n            \"potencia\": 190,\n            \"tipo_id\": 3,\n            \"tipo_nombre\": \"Turbina hidroelectrica\"\n        }\n    ],\n    \"response\": true\n}"
+				},
+				{
+					"name": "Obtener lecturas por ID de dispositivo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getReadings?iddevice=1",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getReadings"
+							],
+							"query": [
+								{
+									"key": "iddevice",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "698"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:32:05 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se obtuvieron las lecturas del dispositivo\",\n    \"readings\": [\n        {\n            \"fecha_registro\": \"2022-03-08 10:48\",\n            \"id\": 6,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:47\",\n            \"id\": 4,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 130,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:45\",\n            \"id\": 2,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 123,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        },\n        {\n            \"fecha_registro\": \"2022-03-08 10:38\",\n            \"id\": 1,\n            \"iddispositivo\": 1,\n            \"nombre_dispositivo\": \"CF01\",\n            \"potencia\": 123,\n            \"tipo_id\": 2,\n            \"tipo_nombre\": \"Celda fotovoltaica\"\n        }\n    ],\n    \"response\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener total Kw/h del dispositivo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getTotal/1",
+					"protocol": "https",
+					"host": [
+						"ul9bncvbk5",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"getTotal",
+						"1"
+					]
+				},
+				"description": "Se obtiene el total de Kw/h registrados en la BD de un dispositivo."
+			},
+			"response": [
+				{
+					"name": "Obtener total del dispositivo con mas de dos lecturas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getTotal/1",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getTotal",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:48:34 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se obtuvo el total de las lecturas\",\n    \"primer_lectura\": \"2022-03-08 10:38\",\n    \"response\": true,\n    \"total\": \"506 Kw/h\",\n    \"ultima_lectura\": \"2022-03-08 10:48\"\n}"
+				},
+				{
+					"name": "Sin lecturas del dispositivo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getTotal/2",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getTotal",
+								"2"
+							]
+						}
+					},
+					"status": "ACCEPTED",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:50:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No se encontraron lecturas del dispositivo registradas\",\n    \"readings\": [],\n    \"response\": false\n}"
+				},
+				{
+					"name": "Obtener total del dispositivo con solo una lectura",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ul9bncvbk5.execute-api.us-east-1.amazonaws.com/dev/getTotal/3",
+							"protocol": "https",
+							"host": [
+								"ul9bncvbk5",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"getTotal",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.8.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Mar 2022 23:51:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Se obtuvo el total de las lecturas\",\n    \"primer_lectura\": \"2022-03-08 11:24\",\n    \"response\": true,\n    \"total\": \"130 Kw/h\",\n    \"ultima_lectura\": \"2022-03-08 11:24\"\n}"
+				}
+			]
+		}
+	]
+}

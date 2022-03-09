@@ -1,0 +1,1473 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Examen Compartamos",
+    "description": "API de ejemplo que enlista los requests solicitados en el examen de Compartamos",
+    "contact": {}
+  },
+  "host": "ul9bncvbk5.execute-api.us-east-1.amazonaws.com",
+  "basePath": "/dev",
+  "securityDefinitions": {},
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/createDevice": {
+      "post": {
+        "description": "Registrar un nuevo dispositivo en la BD.",
+        "summary": "Registrar nuevo dispositivo",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Registrarnuevodispositivo",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegistrarnuevodispositivoRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Dispositivoregistradocorrectamente"
+            },
+            "examples": {
+              "application/json": {
+                "message": "Se registró correctamente el dispositivo",
+                "response": true
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "76"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 08 Mar 2022 21:42:28 GMT"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getDevices": {
+      "get": {
+        "description": "Enlistar los dispositivos registrados en la BD, si se le manda diferentes parametros por URL, es posible filtrar los resultados.",
+        "summary": "Obtener listado de dispositivos",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Obtenerlistadodedispositivos",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Obtenertodoslosdispositivos"
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "3821"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 08 Mar 2022 23:35:05 GMT"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getDevice/17": {
+      "get": {
+        "description": "Se obtiene la informacion de un unico dispositivo a traves del ID",
+        "summary": "Obtener dispositivo por ID",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ObtenerdispositivoporID",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Obtenerdispositivocorrectamente"
+            },
+            "examples": {
+              "application/json": {
+                "device": {
+                  "en_conflicto": false,
+                  "fecha_actualizacion": "2022-03-08 10:48",
+                  "fecha_registro": "2022-03-08 15:39",
+                  "id": 1,
+                  "nombre": "CF01",
+                  "potencial_actual": 130,
+                  "status_ nombre": "En operacion",
+                  "status_id": 1,
+                  "tipo_id": 2,
+                  "tipo_nombre": "Celda fotovoltaica"
+                },
+                "message": "Se obtuvo la informacion del dispositivo",
+                "response": true
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "319"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Wed, 09 Mar 2022 00:00:38 GMT"
+              }
+            }
+          },
+          "202": {
+            "description": "ACCEPTED",
+            "schema": {
+              "$ref": "#/definitions/Dispositivonoexiste"
+            },
+            "examples": {
+              "application/json": {
+                "device": {},
+                "message": "No se encontro el dispositivo especificado",
+                "response": false
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "86"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Wed, 09 Mar 2022 00:01:15 GMT"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/createReading": {
+      "post": {
+        "description": "Se registra una nueva lectura en la BD.",
+        "summary": "Registrar nueva lectura de dispositivo",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Registrarnuevalecturadedispositivo",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegistrarnuevalecturadedispositivoRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Lecturaregistradacorrectamente"
+            },
+            "examples": {
+              "application/json": {
+                "message": "Se registro correctamente la lectura",
+                "response": true
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "67"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 08 Mar 2022 22:38:52 GMT"
+              }
+            }
+          },
+          "202": {
+            "description": "ACCEPTED",
+            "schema": {
+              "$ref": "#/definitions/Dispositivonoexistente"
+            },
+            "examples": {
+              "application/json": {
+                "message": "El dispositivo proporcionado no existe",
+                "response": false
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "70"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 08 Mar 2022 22:39:42 GMT"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getReadings": {
+      "get": {
+        "description": "Se obtiene un un listado de las lecturas registradas en la BD, si se le mandan parametros diferentes, es posible filtrar los resultados.",
+        "summary": "Obtener lecturas de dispositivos",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Obtenerlecturasdedispositivos",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Obtenertodaslaslecturas"
+            },
+            "examples": {
+              "application/json": {
+                "message": "Se obtuvieron todas las lecturas",
+                "readings": [
+                  {
+                    "fecha_registro": "2022-03-08 11:26",
+                    "id": 14,
+                    "iddispositivo": 14,
+                    "nombre_dispositivo": "TH04",
+                    "potencia": 180,
+                    "tipo_id": 3,
+                    "tipo_nombre": "Turbina hidroelectrica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 11:25",
+                    "id": 9,
+                    "iddispositivo": 7,
+                    "nombre_dispositivo": "AG02",
+                    "potencia": 120,
+                    "tipo_id": 1,
+                    "tipo_nombre": "Aerogenerador"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 11:25",
+                    "id": 10,
+                    "iddispositivo": 8,
+                    "nombre_dispositivo": "AG03",
+                    "potencia": 150,
+                    "tipo_id": 1,
+                    "tipo_nombre": "Aerogenerador"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 11:25",
+                    "id": 11,
+                    "iddispositivo": 11,
+                    "nombre_dispositivo": "TH01",
+                    "potencia": 150,
+                    "tipo_id": 3,
+                    "tipo_nombre": "Turbina hidroelectrica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 11:25",
+                    "id": 12,
+                    "iddispositivo": 12,
+                    "nombre_dispositivo": "TH02",
+                    "potencia": 112,
+                    "tipo_id": 3,
+                    "tipo_nombre": "Turbina hidroelectrica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 11:25",
+                    "id": 13,
+                    "iddispositivo": 13,
+                    "nombre_dispositivo": "TH03",
+                    "potencia": 190,
+                    "tipo_id": 3,
+                    "tipo_nombre": "Turbina hidroelectrica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 11:24",
+                    "id": 7,
+                    "iddispositivo": 3,
+                    "nombre_dispositivo": "CF03",
+                    "potencia": 130,
+                    "tipo_id": 2,
+                    "tipo_nombre": "Celda fotovoltaica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 11:24",
+                    "id": 8,
+                    "iddispositivo": 6,
+                    "nombre_dispositivo": "AG01",
+                    "potencia": 138,
+                    "tipo_id": 1,
+                    "tipo_nombre": "Aerogenerador"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 10:48",
+                    "id": 6,
+                    "iddispositivo": 1,
+                    "nombre_dispositivo": "CF01",
+                    "potencia": 130,
+                    "tipo_id": 2,
+                    "tipo_nombre": "Celda fotovoltaica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 10:47",
+                    "id": 4,
+                    "iddispositivo": 1,
+                    "nombre_dispositivo": "CF01",
+                    "potencia": 130,
+                    "tipo_id": 2,
+                    "tipo_nombre": "Celda fotovoltaica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 10:45",
+                    "id": 2,
+                    "iddispositivo": 1,
+                    "nombre_dispositivo": "CF01",
+                    "potencia": 123,
+                    "tipo_id": 2,
+                    "tipo_nombre": "Celda fotovoltaica"
+                  },
+                  {
+                    "fecha_registro": "2022-03-08 10:38",
+                    "id": 1,
+                    "iddispositivo": 1,
+                    "nombre_dispositivo": "CF01",
+                    "potencia": 123,
+                    "tipo_id": 2,
+                    "tipo_nombre": "Celda fotovoltaica"
+                  }
+                ],
+                "response": true
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "1922"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 08 Mar 2022 23:29:25 GMT"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getTotal/1": {
+      "get": {
+        "description": "Se obtiene el total de Kw/h registrados en la BD de un dispositivo.",
+        "summary": "Obtener total Kw/h del dispositivo",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ObtenertotalKw/hdeldispositivo",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Obtenertotaldeldispositivoconmasdedoslecturas"
+            },
+            "examples": {
+              "application/json": {
+                "message": "Se obtuvo el total de las lecturas",
+                "primer_lectura": "2022-03-08 10:38",
+                "response": true,
+                "total": "506 Kw/h",
+                "ultima_lectura": "2022-03-08 10:48"
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "156"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 08 Mar 2022 23:48:34 GMT"
+              }
+            }
+          },
+          "202": {
+            "description": "ACCEPTED",
+            "schema": {
+              "$ref": "#/definitions/Sinlecturasdeldispositivo"
+            },
+            "examples": {
+              "application/json": {
+                "message": "No se encontraron lecturas del dispositivo registradas",
+                "readings": [],
+                "response": false
+              }
+            },
+            "headers": {
+              "Content-Length": {
+                "type": "string",
+                "default": "100"
+              },
+              "Server": {
+                "type": "string",
+                "default": "Werkzeug/2.0.3 Python/3.8.0"
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 08 Mar 2022 23:50:35 GMT"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RegistrarnuevodispositivoRequest": {
+      "title": "RegistrarnuevodispositivoRequest",
+      "example": {
+        "nombre": "TH06",
+        "tipo_dispositivo": 3
+      },
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "tipo_dispositivo": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "nombre",
+        "tipo_dispositivo"
+      ]
+    },
+    "Dispositivoregistradocorrectamente": {
+      "title": "Dispositivoregistradocorrectamente",
+      "example": {
+        "message": "Se registró correctamente el dispositivo",
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "response"
+      ]
+    },
+    "Obtenertodoslosdispositivos": {
+      "title": "Obtenertodoslosdispositivos",
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "devices",
+        "message",
+        "response"
+      ]
+    },
+    "Device": {
+      "title": "Device",
+      "example": {
+        "en_conflicto": false,
+        "fecha_actualizacion": "2022-03-08 11:24",
+        "fecha_registro": "2022-03-08 09:41",
+        "id": 6,
+        "nombre": "AG01",
+        "potencial_actual": 138,
+        "status_ nombre": "En operacion",
+        "status_id": 1,
+        "tipo_id": 1,
+        "tipo_nombre": "Aerogenerador"
+      },
+      "type": "object",
+      "properties": {
+        "en_conflicto": {
+          "type": "boolean"
+        },
+        "fecha_actualizacion": {
+          "type": "string"
+        },
+        "fecha_registro": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "potencial_actual": {},
+        "status_ nombre": {
+          "type": "string"
+        },
+        "status_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tipo_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tipo_nombre": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en_conflicto",
+        "fecha_actualizacion",
+        "fecha_registro",
+        "id",
+        "nombre",
+        "potencial_actual",
+        "status_ nombre",
+        "status_id",
+        "tipo_id",
+        "tipo_nombre"
+      ]
+    },
+    "ObtenertodoslosAerogeneradores": {
+      "title": "ObtenertodoslosAerogeneradores",
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "devices",
+        "message",
+        "response"
+      ]
+    },
+    "ObtenertodaslasCeldasdotovoltaicas": {
+      "title": "ObtenertodaslasCeldasdotovoltaicas",
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "devices",
+        "message",
+        "response"
+      ]
+    },
+    "ObtenertodaslasTurbinashidroelectricas": {
+      "title": "ObtenertodaslasTurbinashidroelectricas",
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "devices",
+        "message",
+        "response"
+      ]
+    },
+    "Obtenerdispositivocorrectamente": {
+      "title": "Obtenerdispositivocorrectamente",
+      "example": {
+        "device": {
+          "en_conflicto": false,
+          "fecha_actualizacion": "2022-03-08 10:48",
+          "fecha_registro": "2022-03-08 15:39",
+          "id": 1,
+          "nombre": "CF01",
+          "potencial_actual": 130,
+          "status_ nombre": "En operacion",
+          "status_id": 1,
+          "tipo_id": 2,
+          "tipo_nombre": "Celda fotovoltaica"
+        },
+        "message": "Se obtuvo la informacion del dispositivo",
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "device": {
+          "$ref": "#/definitions/Device4"
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "device",
+        "message",
+        "response"
+      ]
+    },
+    "Device4": {
+      "title": "Device4",
+      "example": {
+        "en_conflicto": false,
+        "fecha_actualizacion": "2022-03-08 10:48",
+        "fecha_registro": "2022-03-08 15:39",
+        "id": 1,
+        "nombre": "CF01",
+        "potencial_actual": 130,
+        "status_ nombre": "En operacion",
+        "status_id": 1,
+        "tipo_id": 2,
+        "tipo_nombre": "Celda fotovoltaica"
+      },
+      "type": "object",
+      "properties": {
+        "en_conflicto": {
+          "type": "boolean"
+        },
+        "fecha_actualizacion": {
+          "type": "string"
+        },
+        "fecha_registro": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "potencial_actual": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status_ nombre": {
+          "type": "string"
+        },
+        "status_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tipo_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tipo_nombre": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "en_conflicto",
+        "fecha_actualizacion",
+        "fecha_registro",
+        "id",
+        "nombre",
+        "potencial_actual",
+        "status_ nombre",
+        "status_id",
+        "tipo_id",
+        "tipo_nombre"
+      ]
+    },
+    "Dispositivonoexiste": {
+      "title": "Dispositivonoexiste",
+      "example": {
+        "device": {},
+        "message": "No se encontro el dispositivo especificado",
+        "response": false
+      },
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "object"
+        },
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "device",
+        "message",
+        "response"
+      ]
+    },
+    "RegistrarnuevalecturadedispositivoRequest": {
+      "title": "RegistrarnuevalecturadedispositivoRequest",
+      "example": {
+        "iddispositivo": 14,
+        "potencia": 180
+      },
+      "type": "object",
+      "properties": {
+        "iddispositivo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "potencia": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "iddispositivo",
+        "potencia"
+      ]
+    },
+    "Lecturaregistradacorrectamente": {
+      "title": "Lecturaregistradacorrectamente",
+      "example": {
+        "message": "Se registro correctamente la lectura",
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "response"
+      ]
+    },
+    "Dispositivonoexistente": {
+      "title": "Dispositivonoexistente",
+      "example": {
+        "message": "El dispositivo proporcionado no existe",
+        "response": false
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "response"
+      ]
+    },
+    "Eldispositivoestaenmantenimiento": {
+      "title": "Eldispositivoestaenmantenimiento",
+      "example": {
+        "message": "El dispositivo proporcionado esta en mantenimiento",
+        "response": false
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "response"
+      ]
+    },
+    "Eldispositivohallegadoallimitedeintentosdelectura": {
+      "title": "Eldispositivohallegadoallimitedeintentosdelectura",
+      "example": {
+        "message": "El dispositivo proporcionado esta en mantenimiento, se ha marcado como En conflicto",
+        "response": false
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "response"
+      ]
+    },
+    "Obtenertodaslaslecturas": {
+      "title": "Obtenertodaslaslecturas",
+      "example": {
+        "message": "Se obtuvieron todas las lecturas",
+        "readings": [
+          {
+            "fecha_registro": "2022-03-08 11:26",
+            "id": 14,
+            "iddispositivo": 14,
+            "nombre_dispositivo": "TH04",
+            "potencia": 180,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 9,
+            "iddispositivo": 7,
+            "nombre_dispositivo": "AG02",
+            "potencia": 120,
+            "tipo_id": 1,
+            "tipo_nombre": "Aerogenerador"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 10,
+            "iddispositivo": 8,
+            "nombre_dispositivo": "AG03",
+            "potencia": 150,
+            "tipo_id": 1,
+            "tipo_nombre": "Aerogenerador"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 11,
+            "iddispositivo": 11,
+            "nombre_dispositivo": "TH01",
+            "potencia": 150,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 12,
+            "iddispositivo": 12,
+            "nombre_dispositivo": "TH02",
+            "potencia": 112,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 13,
+            "iddispositivo": 13,
+            "nombre_dispositivo": "TH03",
+            "potencia": 190,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:24",
+            "id": 7,
+            "iddispositivo": 3,
+            "nombre_dispositivo": "CF03",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:24",
+            "id": 8,
+            "iddispositivo": 6,
+            "nombre_dispositivo": "AG01",
+            "potencia": 138,
+            "tipo_id": 1,
+            "tipo_nombre": "Aerogenerador"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:48",
+            "id": 6,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:47",
+            "id": 4,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:45",
+            "id": 2,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 123,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:38",
+            "id": 1,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 123,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          }
+        ],
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Reading"
+          }
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "readings",
+        "response"
+      ]
+    },
+    "Reading": {
+      "title": "Reading",
+      "example": {
+        "fecha_registro": "2022-03-08 11:26",
+        "id": 14,
+        "iddispositivo": 14,
+        "nombre_dispositivo": "TH04",
+        "potencia": 180,
+        "tipo_id": 3,
+        "tipo_nombre": "Turbina hidroelectrica"
+      },
+      "type": "object",
+      "properties": {
+        "fecha_registro": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "iddispositivo": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nombre_dispositivo": {
+          "type": "string"
+        },
+        "potencia": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tipo_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tipo_nombre": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fecha_registro",
+        "id",
+        "iddispositivo",
+        "nombre_dispositivo",
+        "potencia",
+        "tipo_id",
+        "tipo_nombre"
+      ]
+    },
+    "ObtenerlecturasdeAerogeneradores": {
+      "title": "ObtenerlecturasdeAerogeneradores",
+      "example": {
+        "message": "Se obtuvieron las lecturas del tipo de dispositivo proporcionado",
+        "readings": [
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 9,
+            "iddispositivo": 7,
+            "nombre_dispositivo": "AG02",
+            "potencia": 120,
+            "tipo_id": 1,
+            "tipo_nombre": "Aerogenerador"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 10,
+            "iddispositivo": 8,
+            "nombre_dispositivo": "AG03",
+            "potencia": 150,
+            "tipo_id": 1,
+            "tipo_nombre": "Aerogenerador"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:24",
+            "id": 8,
+            "iddispositivo": 6,
+            "nombre_dispositivo": "AG01",
+            "potencia": 138,
+            "tipo_id": 1,
+            "tipo_nombre": "Aerogenerador"
+          }
+        ],
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Reading"
+          }
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "readings",
+        "response"
+      ]
+    },
+    "ObtenerlecturasdeCeldasfotovoltaicas": {
+      "title": "ObtenerlecturasdeCeldasfotovoltaicas",
+      "example": {
+        "message": "Se obtuvieron las lecturas del tipo de dispositivo proporcionado",
+        "readings": [
+          {
+            "fecha_registro": "2022-03-08 11:24",
+            "id": 7,
+            "iddispositivo": 3,
+            "nombre_dispositivo": "CF03",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:48",
+            "id": 6,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:47",
+            "id": 4,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:45",
+            "id": 2,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 123,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:38",
+            "id": 1,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 123,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          }
+        ],
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Reading"
+          }
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "readings",
+        "response"
+      ]
+    },
+    "ObtenerlecturasdeTurbinashidroelectricas": {
+      "title": "ObtenerlecturasdeTurbinashidroelectricas",
+      "example": {
+        "message": "Se obtuvieron las lecturas del tipo de dispositivo proporcionado",
+        "readings": [
+          {
+            "fecha_registro": "2022-03-08 11:26",
+            "id": 14,
+            "iddispositivo": 14,
+            "nombre_dispositivo": "TH04",
+            "potencia": 180,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 11,
+            "iddispositivo": 11,
+            "nombre_dispositivo": "TH01",
+            "potencia": 150,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 12,
+            "iddispositivo": 12,
+            "nombre_dispositivo": "TH02",
+            "potencia": 112,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          },
+          {
+            "fecha_registro": "2022-03-08 11:25",
+            "id": 13,
+            "iddispositivo": 13,
+            "nombre_dispositivo": "TH03",
+            "potencia": 190,
+            "tipo_id": 3,
+            "tipo_nombre": "Turbina hidroelectrica"
+          }
+        ],
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Reading"
+          }
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "readings",
+        "response"
+      ]
+    },
+    "ObtenerlecturasporIDdedispositivo": {
+      "title": "ObtenerlecturasporIDdedispositivo",
+      "example": {
+        "message": "Se obtuvieron las lecturas del dispositivo",
+        "readings": [
+          {
+            "fecha_registro": "2022-03-08 10:48",
+            "id": 6,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:47",
+            "id": 4,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 130,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:45",
+            "id": 2,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 123,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          },
+          {
+            "fecha_registro": "2022-03-08 10:38",
+            "id": 1,
+            "iddispositivo": 1,
+            "nombre_dispositivo": "CF01",
+            "potencia": 123,
+            "tipo_id": 2,
+            "tipo_nombre": "Celda fotovoltaica"
+          }
+        ],
+        "response": true
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Reading"
+          }
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "readings",
+        "response"
+      ]
+    },
+    "Obtenertotaldeldispositivoconmasdedoslecturas": {
+      "title": "Obtenertotaldeldispositivoconmasdedoslecturas",
+      "example": {
+        "message": "Se obtuvo el total de las lecturas",
+        "primer_lectura": "2022-03-08 10:38",
+        "response": true,
+        "total": "506 Kw/h",
+        "ultima_lectura": "2022-03-08 10:48"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "primer_lectura": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        },
+        "total": {
+          "type": "string"
+        },
+        "ultima_lectura": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "primer_lectura",
+        "response",
+        "total",
+        "ultima_lectura"
+      ]
+    },
+    "Sinlecturasdeldispositivo": {
+      "title": "Sinlecturasdeldispositivo",
+      "example": {
+        "message": "No se encontraron lecturas del dispositivo registradas",
+        "readings": [],
+        "response": false
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "readings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "response": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "message",
+        "readings",
+        "response"
+      ]
+    },
+    "Obtenertotaldeldispositivoconsolounalectura": {
+      "title": "Obtenertotaldeldispositivoconsolounalectura",
+      "example": {
+        "message": "Se obtuvo el total de las lecturas",
+        "primer_lectura": "2022-03-08 11:24",
+        "response": true,
+        "total": "130 Kw/h",
+        "ultima_lectura": "2022-03-08 11:24"
+      },
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "primer_lectura": {
+          "type": "string"
+        },
+        "response": {
+          "type": "boolean"
+        },
+        "total": {
+          "type": "string"
+        },
+        "ultima_lectura": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "primer_lectura",
+        "response",
+        "total",
+        "ultima_lectura"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
